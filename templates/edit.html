@@ -1,0 +1,25 @@
+{% include 'includes/header.html' %}
+<h5 class="card-title">Edit Student Information</h5>
+    <form action = "{{ url_for('updaterec') }}" method = "POST">
+        <div class="form-floating mb-3">
+            <input type = "text" name = "nm" id="floatingInput" class="form-control" placeholder=" " value='{{rows[0]["name"]}}' />
+            <label for="floatingInput">Name</label>
+        </div>
+        <div class="form-floating mb-3">
+            <textarea name = "add" class="form-control" placeholder=" ">{{rows[0]["addr"]}}</textarea>
+            <label for="floatingInput">Address</label>
+        </div>
+        <div class="form-floating mb-3">       
+            <input type = "text" name = "city" class="form-control" placeholder=" " value='{{rows[0]["city"]}}'/>
+            <label for="floatingInput">City</label>
+        </div>
+        <div class="form-floating mb-3">    
+            <input type = "text" name = "pin" class="form-control" placeholder=" " value='{{rows[0]["pin"]}}'/>
+            <label for="floatingInput">PINCODE</label>
+        </div>
+        <input type = "hidden" name = "id" value='{{id}}'/>
+        <input type = "submit" value = "submit" class="btn btn-primary"/>
+        <a class="btn btn-secondary" href = "{{ url_for('list')}}">cancel</a>
+    </form>
+    
+{% include 'includes/footer.html' %}

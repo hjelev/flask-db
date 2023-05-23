@@ -1,0 +1,26 @@
+{% include 'includes/header.html' %}
+<h5 class="card-title">List</h5>
+
+    <table class="table table-striped table-hover table-bordered">
+         <thead class="table-dark">
+            <th scope="col">Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">city</th>
+            <th scope="col">Pincode</th>
+
+         </thead>
+         <tbody>
+            {% for row in rows %}
+                <tr>
+                    <td>{{row["name"]}}</td>
+                    <td>{{row["addr"]}}</td>
+                    <td> {{row["city"]}}</td>
+                    <td>{{row['pin']}}</td>	
+
+                </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+      <a class="btn btn-success" href = "{{ url_for('new_student')}}">Add</a>
+      <a class="btn btn-warning" href = "{{ url_for('list')}}">Edit</a>
+      {% include 'includes/footer.html' %}
